@@ -1,5 +1,9 @@
 <h1>Shorter-URL</h1>
 
+{% for message in get_flashed_messages() %}
+<h2>{{ message }}</h2>
+{% endfor %}
+
 <form action="short-url" method="POST">
   <label for="url">Long URL</label>
   <input type="url" name="url" value="" required>

@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import json
 import os.path
 
 app = Flask(__name__)
+app.secret_key = "crossfit"
 
 @app.route('/')
 def home():
@@ -18,6 +19,7 @@ def short_url():
         urls = json.load(url_file)
 
     if request.form['code'] in urls.keys():
+      flash('Sorry, that short name has already been taken. Try again.')
       return redirect(url_for('home'))
 
     urls[request.form['code']] = {'url':request.form['url']}
