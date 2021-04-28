@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request
-
+from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 @app.route('/')
@@ -11,4 +10,4 @@ def short_url():
   if request.method == 'POST':
     return render_template('short_url.html', code = request.form['code'])
   else:
-    return 'This is not valid, yet.'
+    return redirect(url_for('home'))
