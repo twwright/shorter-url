@@ -4,7 +4,7 @@
 ## Learning Objectives
 
 - [x] using Jinja for templating
-- [ ] making GET/POST requests in Flask
-- [ ] using Flask to set up a JSON API
+- [x] making GET/POST requests in Flask
+- [x] using Flask to set up a JSON API
 - [ ] templating with Bootstrap
-- [ ] deploying with Gunicorn
+- [ ] deploying with Gunicorns
